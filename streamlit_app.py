@@ -24,7 +24,7 @@ def load_lottieurl(url: str):
     return r.json()
 
 
-icon = Image.open("icone.png")
+icon = Image.open("icone.jpg")
 
 st.set_page_config(
     page_title="Maos por Patas",
@@ -70,7 +70,7 @@ if study == 'Quem Somos':
 
     st.write(
         """
-        Esse site foi desenvolvido como parte de Projeto Integrador da UNIVESP""")    
+        Esse site foi desenvolvido como parte de Projeto Integrador da UNIVESP""")
 
 elif study == 'Informações de Animais':
     # functions end here, title, sidebar setting and descriptions start here
