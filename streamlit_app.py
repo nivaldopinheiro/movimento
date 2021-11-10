@@ -192,8 +192,7 @@ elif study == 'Informações de Casas de Ração':
 
         m = folium.Map(tiles="Stamen Terrain",
                        location=[-23.70984667472482, -46.85242934867622],
-                       zoom_start=13,
-                       prefer_canvas=True)
+                       zoom_start=13)
         fig1.add_child(m)
 
         f3 = folium.FeatureGroup("Casas De Ração")
