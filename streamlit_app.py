@@ -4,7 +4,6 @@ import folium
 from branca.element import Figure
 import pandas as pd
 import joblib
-import geopandas as gpd
 import folium.plugins as plugins
 from folium.plugins import HeatMap
 import numpy as np
@@ -14,7 +13,6 @@ from PIL import Image
 import plotly.express as px
 import streamlit.components.v1 as components
 import requests
-import gc
 
 
 def load_lottieurl(url: str):
@@ -24,7 +22,7 @@ def load_lottieurl(url: str):
     return r.json()
 
 
-icon = Image.open("icone.jpg")
+icon = Image.open("static\icone.jpg")
 
 st.set_page_config(
     page_title="Maos por Patas",
@@ -55,22 +53,75 @@ if study == 'Quem Somos':
 
     with t2:
         # use_column_width=True)
-        st.image(Image.open("vira-lata-caramelo.jpg"), width=200)
+        st.image(Image.open("static/logo.jpeg"), width=200)
 
     st.write(
         """
+
+        """)
+
+    st.markdown('### Animais de Rua de Itapecerica da Serra')
+    
+    st.write(
+        """
+
         """)
 
     st.write(
         """
-        O crime de abandono de animais é constante e tem se tornado algo maior, o grupo antes mesmo do Projeto Integrador já conhecia a ONG Animais de Rua Itapecerica da Serra e sempre apoiou o Movimento, estando desde sempre nesta luta para sanar a fome e sede animal, porém a falta de recurso e reconhecimento, são os principais motivos que os impossibilita de realmente traçar o objetivo final, vendo isso, para ajudar o Movimento de alguma forma decidimos criar um portal onde estará disponível adoção de animais, parceria entre casas de ração e também a divulgação do seu trabalho.
+        Somos um movimento que luta por políticas públicas para os animais de rua.
+
+        Apresentamos e divulgamos os principais problemas e dificuldades da causa animal e lutamos para manter ativos nossos projetos como:
+
+        - Alimente um Cão de Rua
+        - Projeto Farmacinha Popular
+        - Roupinhas Para Animais de Rua
+        
         """)
+
+    st.write(
+        """
+
+        """)
+
+    #https://www.facebook.com/777922895900095/videos/431890404709544
+
+    mid_video1, t1_video, mid_video = st.columns([5, 10, 5])
+    with t1_video:
+        video1 = open("static/video.mp4", "rb") 
+        st.video(video1)
+
+        st.write("""
+        Video credit:
+        Creator: João.
+        License: Free for personal use.
+        """)
+
+    t1_foto, t2_foto = st.columns([10, 10])
+    with t1_foto:
+        st.image(Image.open("static/foto8.jpeg"))
+
+    with t2_foto:
+        # use_column_width=True)
+        st.image(Image.open("static/foto5.jpeg"))
+
+    t3_foto, t4_foto = st.columns([10, 10])
+    with t3_foto:
+        st.image(Image.open("static/foto7.jpeg"))
+
+    with t4_foto:
+        # use_column_width=True)
+        st.image(Image.open("static/foto16.jpeg"))
+
+    st.sidebar.write("---")
 
     st.markdown('### Parcerias')
 
     st.write(
         """
-        Esse site foi desenvolvido como parte de Projeto Integrador da UNIVESP""")
+        O crime de abandono de animais é constante e tem se tornado algo maior, o grupo antes mesmo do Projeto Integrador já conhecia a ONG Animais de Rua Itapecerica da Serra e sempre apoiou o Movimento, estando desde sempre nesta luta para sanar a fome e sede animal, porém a falta de recurso e reconhecimento, são os principais motivos que os impossibilita de realmente traçar o objetivo final, vendo isso, para ajudar o Movimento de alguma forma decidimos criar um portal onde estará disponível adoção de animais, parceria entre casas de ração e também a divulgação do seu trabalho.
+        
+        Esse site foi desenvolvido como parte de Projeto Integrador da Universidade Virtual do Estado de São Paulo (UNIVESP), Polo de Itapecerica da Serra, com os integrantes Adriano, Cláudio, Jéssica, João, Kelvin e Nivaldo.""")
 
 elif study == 'Informações de Animais':
     # functions end here, title, sidebar setting and descriptions start here
@@ -80,15 +131,45 @@ elif study == 'Informações de Animais':
 
     with t2:
         # use_column_width=True)
-        st.image(Image.open("vira-lata-caramelo.jpg"), width=200)
+        st.image(Image.open("static/logo.jpeg"), width=200)
 
     st.write(
         """
-        O objetivo desse site é permitir uma análise mais detalhada sobre
+        O objetivo desse site é permitir uma maior visibilidade sobre o trabalho desenvolvido na cidade de Itapecerica da Serra.
         """)
 
+    t1_A, t2_B, t3_C = st.columns([10, 10, 10])
+    with t1_A:
+        st.image(Image.open("static/foto1.jpeg"))
+
+    with t2_B:
+        st.image(Image.open("static/foto2.jpeg"))
+    
+    with t3_C:
+        st.image(Image.open("static/foto3.jpeg"))
+
+    t4_A, t5_B, t6_C = st.columns([10, 10, 10])
+    with t4_A:
+        st.image(Image.open("static/foto4.jpeg"))
+
+    with t5_B:
+        st.image(Image.open("static/foto6.jpeg"))
+    
+    with t6_C:
+        st.image(Image.open("static/foto9.jpeg"))
+
+    t7_A, t8_B, t9_C = st.columns([10, 10, 10])
+    with t7_A:
+        st.image(Image.open("static/foto10.jpeg"))
+
+    with t8_B:
+        st.image(Image.open("static/foto11.jpeg"))
+    
+    with t9_C:
+        st.image(Image.open("static/foto12.jpeg"))
+
     with st.expander("Expanda para cadastro de animais"):
-        st.markdown('### ORIGEM DOS ')
+        st.markdown('### Cadastro Inicial ')
 
 elif study == 'Informações de Casas de Ração':
 
@@ -98,15 +179,12 @@ elif study == 'Informações de Casas de Ração':
 
     with t2:
         # use_column_width=True)
-        st.image(Image.open("vira-lata-caramelo.jpg"), width=200)
+        st.image(Image.open("static/logo.jpeg"), width=200)
 
     st.write(
         """
-        O objetivo desse site é entender o posicionamento atual dos centros de distribuição alinhado com modelos de machine learning com propostas de localizações baseadas em clientes e volumes.
-
-        Os resultados dos modelos estão disponível pelo filtro_CD no mapa como BSK - NEW_CD2 empregando o algoritmo DBSCAN. 
-
-        Uma ferramenta de medida está incluida no gráfico para facilitar medidas entre dois pontos (estendendo-se para uma 'rota', de forma que vários pontos podem ser adicionados.)
+        Para entender e verificar o posicionamento atual das casas de ração um mapa foi desenvolvido.
+        
         """)
 
     with st.spinner('Aguarde o processamento sobre os dados...'):
