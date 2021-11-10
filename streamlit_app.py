@@ -22,7 +22,7 @@ def load_lottieurl(url: str):
     return r.json()
 
 
-icon = Image.open("static\icone.jpg")
+icon = Image.open("static/icone.jpg")
 
 st.set_page_config(
     page_title="Maos por Patas",
